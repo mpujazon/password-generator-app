@@ -1,0 +1,33 @@
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root{
+    --clr-white: #FFF;
+    --clr-black: #000;
+    --clr-grey-950: #08070B;
+    --clr-grey-900: #14131B;
+    --clr-grey-850: #18171F;
+    --clr-grey-800: #24232C;
+    --clr-grey-700: #54535B;
+    --clr-grey-600: #817D92;
+    --clr-grey-200: #E6E5EA;
+    --clr-green-200: #A4FFAF;
+    --clr-yellow-300: #F8CD65;
+    --clr-orange-400: #FB7C58;
+    --clr-red-500: #F64A4A;
+
+    --gradient-1: linear-gradient(#14131B, #08070B);
+
+
+    --spacing-100: .5rem;
+    --spacing-200: 1rem;
+    --spacing-300: 1.5rem;
+    --spacing-400: 2rem;
+    --spacing-700: 3.5rem;
+    --spacing-1000: 5rem;
+    --spacing-1300: 6.5rem;
+    --spacing-1600: 8rem;
+    --spacing-2000: 10rem;
+    --spacing-2200:11rem;
+    --spacing-2300: 11.5rem;
+}
