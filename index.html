@@ -3,27 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Password generator app</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/index.js" defer></script>
+  <title>Password generator app</title>
 </head>
 <body>
-
-  Password Generator
-
-  P4$5W0rD!
-
-  Character Length
-
-  Include Uppercase Letters
-  Include Lowercase Letters
-  Include Numbers
-  Include Symbols
-
-  Strength
-
-  Generate
-
+  <div class="container">
+    <header>
+      <h1>Password Generator</h1>
+      <div class="password-container">
+        <p id="password">P4$5W0rD!</p>
+        <div>
+          <p class="copied-text hidden">Copied</p>
+          <img src="assets/images/icon-copy.svg" alt="Copy Icon">
+        </div>
+      </div>
+    </header>
+    <main>
+      <form action="javascript:void(0)">
+        <div class="character-length">
+          <div class="label">
+            <label for="character-length">Character Length</label><span id="length-number">0</span>
+          </div>
+          <input type="range" name="character-length" id="character-length-range">
+        </div>
+        <div class="checkboxes-group">
+          <div class="uppercase-group">
+            <input type="checkbox" name="uppercase" id="uppercase-check">
+            <label for="uppercase-check">Include Uppercase Letters</label>
+          </div>
+          <div class="lowercase-group">
+            <input type="checkbox" name="lowercase" id="lowercase-check">
+            <label for="lowercase-check">Include Lowercase Letters</label>
+          </div>
+          <div class="numbers-group">
+            <input type="checkbox" name="uppercase" id="numbers-check">
+            <label for="numbers-check">Include Numbers</label>
+          </div>
+          <div class="symbols-group">
+            <input type="checkbox" name="uppercase" id="symbols-check">
+            <label for="symbols-check">Include Symbols</label>
+          </div>
+        </div>
+        <div class="strength-container">
+          <p>Strength</p>
+          <div class="strength-indicator">
+            <p class="strength-word">MEDIUM</p>
+            <div class="strength-visual">
+              <div id="rect-1" class="rectangle"></div>
+              <div id="rect-2" class="rectangle"></div>
+              <div id="rect-3" class="rectangle"></div>
+              <div id="rect-4" class="rectangle"></div>
+            </div>
+          </div>
+        </div>
+        <button>Generate <img src="assets/images/icon-arrow-right.svg" alt="Generate arrow icon"></button>
+      </form>
+    </main>
+  </div>
 </body>
 </html>
