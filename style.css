@@ -57,7 +57,7 @@ main{
     flex-direction: column;
     gap: var(--spacing-200);
     width: 100%;
-    max-width: 343px;
+    max-width: 21.4375rem;
     margin: var(--spacing-200);
 }
 
@@ -121,17 +121,17 @@ main h1{
     flex-direction: column;
     gap: var(--spacing-400);
 }
+.character-length .label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .character-length{
     font-weight: 700;
     line-height: 1.25rem;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-200);
-}
-.character-length .label{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 #length-number{
     color: var(--clr-green-200);
@@ -151,8 +151,8 @@ main h1{
 #character-length-range::-webkit-slider-thumb{    
     -webkit-appearance: none;
     box-sizing: content-box;
-    width: 1.7em;
-    height: 1.7em;
+    width: 1.6em;
+    height: 1.6em;
     background: var(--clr-grey-200);
     border-radius: 50%;
     border: .2em transparent solid;
@@ -169,8 +169,8 @@ main h1{
 #character-length-range::-moz-range-thumb{
     appearance: none;
     box-sizing: content-box;
-    width: 1.7em;
-    height: 1.7em;
+    width: 1.6em;
+    height: 1.6em;
     background: var(--clr-grey-200);
     border-radius: 50%;
     border: .2em transparent solid;
@@ -201,7 +201,6 @@ input[type="checkbox"] {
     appearance: none;
     background-color: var(--clr-grey-800);
     margin: 0;
-    margin-top: -.05em;
     font: inherit;
     border: .125em var(--clr-grey-200) solid;
     width: 1.25em;
@@ -316,4 +315,76 @@ input[type="checkbox"]:checked::before {
 }
 #pass-form button:hover svg{
     fill: var(--clr-green-200);
+}
+
+/* Tablet and desktop Breakpoint */
+@media (min-width: 40.625rem){
+    main{
+        width: 100%;
+        max-width: 33.75rem;
+    }
+    /* Password Container */
+    main h1{
+        font-size: 1.5rem;
+        line-height: 2rem;
+        margin-bottom: .5rem;
+    }
+    .password-container{
+        padding: var(--spacing-200) var(--spacing-400);
+    }
+    #password{
+        font-size: 2rem;
+        line-height: 2.625rem;
+    }
+    .copied-text{
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+    }
+    .icon-copy{
+        scale: 1;
+    }
+
+    /* Password Settings Form */
+    #pass-form{
+        padding: var(--spacing-300) var(--spacing-400);
+    }
+    .character-length{
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+    }
+    #length-number{
+        font-size: 2rem;
+        line-height: 2.625rem;
+    }
+
+    /*  Checkbox Styles */
+    .checkboxes-group{
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+    }
+    .checkboxes-group div{
+        gap: var(--spacing-300);
+    }
+    
+    /* Strength Indicator Container and states */
+    .strength-container{
+        padding: var(--spacing-200) var(--spacing-400);
+    }
+    .strength-container p{
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+    }
+    #strength-word{
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    /* Generate Button Styles */
+    #pass-form button{
+        padding: var(--spacing-300) var(--spacing-2200);
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        margin-top: 0;
+        margin-bottom: .7rem;
+    }
 }
