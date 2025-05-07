@@ -9,58 +9,61 @@
   <title>Password generator app</title>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Password Generator</h1>
-      <div class="password-container">
-        <p id="password">P4$5W0rD!</p>
-        <div>
-          <p class="copied-text hidden">Copied</p>
-          <img src="assets/images/icon-copy.svg" alt="Copy Icon">
+  <main>
+    <h1>Password Generator</h1>
+    <div class="password-container">
+      <input id=password type="text" placeholder="P4$5W0rD!" disabled>
+      <div class="copy-container">
+        <p class="copied-text hidden">Copied</p>
+        <svg class="icon-copy" width="21" height="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.341 3.091 17.909.659A2.25 2.25 0 0 0 16.319 0H8.25A2.25 2.25 0 0 0 6 2.25V4.5H2.25A2.25 2.25 0 0 0 0 6.75v15A2.25 2.25 0 0 0 2.25 24h10.5A2.25 2.25 0 0 0 15 21.75V19.5h3.75A2.25 2.25 0 0 0 21 17.25V4.682a2.25 2.25 0 0 0-.659-1.591ZM12.469 21.75H2.53a.281.281 0 0 1-.281-.281V7.03a.281.281 0 0 1 .281-.281H6v10.5a2.25 2.25 0 0 0 2.25 2.25h4.5v1.969a.282.282 0 0 1-.281.281Zm6-4.5H8.53a.281.281 0 0 1-.281-.281V2.53a.281.281 0 0 1 .281-.281H13.5v4.125c0 .621.504 1.125 1.125 1.125h4.125v9.469a.282.282 0 0 1-.281.281Zm.281-12h-3v-3h.451c.075 0 .147.03.2.082L18.667 4.6a.283.283 0 0 1 .082.199v.451Z" fill="currentColor"/>
+        </svg>
+      </div>
+    </div>
+    <form id="pass-form" action="javascript:void(0)">
+      <div class="character-length">
+        <div class="label">
+          <label for="character-length">Character Length</label><span id="length-number">0</span>
+        </div>
+        <input type="range" name="character-length" id="character-length-range" min="4" max="32" value="4">
+      </div>
+      <div class="checkboxes-group">
+        <div class="uppercase-group">
+          <input type="checkbox" name="uppercase" id="uppercase-check">
+          <label for="uppercase-check">Include Uppercase Letters</label>
+        </div>
+        <div class="lowercase-group">
+          <input type="checkbox" name="lowercase" id="lowercase-check">
+          <label for="lowercase-check">Include Lowercase Letters</label>
+        </div>
+        <div class="numbers-group">
+          <input type="checkbox" name="uppercase" id="numbers-check">
+          <label for="numbers-check">Include Numbers</label>
+        </div>
+        <div class="symbols-group">
+          <input type="checkbox" name="uppercase" id="symbols-check">
+          <label for="symbols-check">Include Symbols</label>
         </div>
       </div>
-    </header>
-    <main>
-      <form action="javascript:void(0)">
-        <div class="character-length">
-          <div class="label">
-            <label for="character-length">Character Length</label><span id="length-number">0</span>
-          </div>
-          <input type="range" name="character-length" id="character-length-range" min="4" max="32">
-        </div>
-        <div class="checkboxes-group">
-          <div class="uppercase-group">
-            <input type="checkbox" name="uppercase" id="uppercase-check">
-            <label for="uppercase-check">Include Uppercase Letters</label>
-          </div>
-          <div class="lowercase-group">
-            <input type="checkbox" name="lowercase" id="lowercase-check">
-            <label for="lowercase-check">Include Lowercase Letters</label>
-          </div>
-          <div class="numbers-group">
-            <input type="checkbox" name="uppercase" id="numbers-check">
-            <label for="numbers-check">Include Numbers</label>
-          </div>
-          <div class="symbols-group">
-            <input type="checkbox" name="uppercase" id="symbols-check">
-            <label for="symbols-check">Include Symbols</label>
+      <div class="strength-container">
+        <p>Strength</p>
+        <div class="strength-indicator">
+          <p id="strength-word">STRONG</p>
+          <div id="strength-visual" class="strong">
+            <div id="rect-1" class="rectangle"></div>
+            <div id="rect-2" class="rectangle"></div>
+            <div id="rect-3" class="rectangle"></div>
+            <div id="rect-4" class="rectangle"></div>
           </div>
         </div>
-        <div class="strength-container">
-          <p>Strength</p>
-          <div class="strength-indicator">
-            <p class="strength-word">MEDIUM</p>
-            <div class="strength-visual">
-              <div id="rect-1" class="rectangle"></div>
-              <div id="rect-2" class="rectangle"></div>
-              <div id="rect-3" class="rectangle"></div>
-              <div id="rect-4" class="rectangle"></div>
-            </div>
-          </div>
-        </div>
-        <button>Generate <img src="assets/images/icon-arrow-right.svg" alt="Generate arrow icon"></button>
-      </form>
-    </main>
-  </div>
+      </div>
+      <button>
+        Generate 
+        <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+          <path fill="currentColor" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/>
+        </svg>
+      </button>
+    </form>
+  </main>
 </body>
 </html>

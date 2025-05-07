@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 :root{
+    /* Color & Gradient Variables */
     --clr-white: #FFF;
     --clr-black: #000;
     --clr-grey-950: #08070B;
@@ -15,10 +16,9 @@
     --clr-yellow-300: #F8CD65;
     --clr-orange-400: #FB7C58;
     --clr-red-500: #F64A4A;
-
     --gradient-1: linear-gradient(#14131B, #08070B);
 
-
+    /* Spacing Variables */
     --spacing-100: .5rem;
     --spacing-200: 1rem;
     --spacing-300: 1.5rem;
@@ -30,4 +30,290 @@
     --spacing-2000: 10rem;
     --spacing-2200:11rem;
     --spacing-2300: 11.5rem;
+}
+
+/* CSS Reset */
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+/* General Styles, MOBILE FIRST */
+body{
+    background: var(--gradient-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--clr-grey-200);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+    width: 100%;
+    max-width: 343px;
+    margin: var(--spacing-200);
+}
+
+/* Password container */
+main h1{
+    color: var(--clr-grey-600);
+    font-size: 1rem;
+    line-height: 1.25rem;
+    text-align: center;
+}
+.password-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-grey-800);
+    padding: var(--spacing-200);
+}
+#password{
+    background-color: transparent;
+    color: var(--clr-grey-200);
+    font-family: 'JetBrains Mono', monospace;
+    width: 100%;
+    border: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+}
+#password:disabled{
+    -webkit-text-fill-color: var(--clr-grey-700);
+}
+.copy-container{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-200);
+}
+.copied-text{
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.25rem;
+    text-transform: uppercase;
+    color: var(--clr-green-200);
+}
+.icon-copy{
+    scale: .8;
+    color: var(--clr-green-200);
+    transition: color .5s ease-in-out;
+}
+.icon-copy:hover{
+    color: var(--clr-white);
+    cursor: pointer;
+}
+.hidden{
+    display: none;
+}
+
+/* Password settings Form*/
+#pass-form{
+    background-color: var(--clr-grey-800);
+    padding: var(--spacing-200);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+}
+.character-length{
+    font-weight: 700;
+    line-height: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+}
+.character-length .label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#length-number{
+    color: var(--clr-green-200);
+    font-size: 1.5rem;
+    line-height: 2rem;
+    position: relative;
+    right: .9375rem;
+}
+#character-length-range{
+    width: 100%;
+    appearance: none;
+    height: .5rem;
+    background: var(--clr-grey-850);
+}
+
+/* Range Input: Slider Thumb Styles for Webkit */
+#character-length-range::-webkit-slider-thumb{    
+    -webkit-appearance: none;
+    box-sizing: content-box;
+    width: 1.7em;
+    height: 1.7em;
+    background: var(--clr-grey-200);
+    border-radius: 50%;
+    border: .2em transparent solid;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+#character-length-range::-webkit-slider-thumb:hover,
+#character-length-range::-webkit-slider-thumb:active{
+    background: var(--clr-grey-850);
+    border: .2em var(--clr-green-200) solid;
+}
+
+/* Range Input: Slider Thumb Styles for Mozilla */
+#character-length-range::-moz-range-thumb{
+    appearance: none;
+    box-sizing: content-box;
+    width: 1.7em;
+    height: 1.7em;
+    background: var(--clr-grey-200);
+    border-radius: 50%;
+    border: .2em transparent solid;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+#character-length-range::-moz-range-thumb:hover,
+#character-length-range::-moz-range-thumb:active{
+    background: var(--clr-grey-850);
+    border: .2em var(--clr-green-200) solid;
+}
+
+/*  Checkbox Styles */
+.checkboxes-group{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+    font-weight: 700;
+    line-height: 1.25rem;
+}
+.checkboxes-group div{
+    display: flex;
+    gap: var(--spacing-200);
+    align-items: center;
+}
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--clr-grey-800);
+    margin: 0;
+    margin-top: -.05em;
+    font: inherit;
+    border: .125em var(--clr-grey-200) solid;
+    width: 1.25em;
+    height: 1.25em;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+input[type="checkbox"]:hover {
+    border: .125em var(--clr-green-200) solid;
+}
+input[type="checkbox"]:checked{
+    background-color: var(--clr-green-200);
+    border: .125em var(--clr-green-200) solid;
+}
+input[type="checkbox"]:checked::before {
+    content: '';
+    background: url('/assets/images/icon-check.svg') no-repeat center/cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.7em;
+    height: 0.7em;
+}
+
+/* Strength Indicator Container and states */
+.strength-container{
+    background-color: var(--clr-grey-850);
+    padding: .875rem var(--spacing-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.strength-container p{
+    font-weight: 700;
+    line-height: 1.25rem;
+    text-transform: uppercase;
+    color: var(--clr-grey-600);
+}
+.strength-indicator{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-200);
+}
+#strength-word{
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    color: var(--clr-grey-200);
+}
+#strength-visual{
+    display: flex;
+    gap: var(--spacing-100);
+}
+#strength-visual div{
+    width: .625em;
+    height: 1.75em;
+    border: .125em var(--clr-grey-200) solid;
+}
+
+/* Too-Weak Strength Indicator */
+#strength-visual.too-weak > #rect-1{
+    background-color: var(--clr-red-500);
+    border-color: var(--clr-red-500);
+}
+
+/* Weak Strength Indicator */
+#strength-visual.weak > #rect-1,
+#strength-visual.weak > #rect-2{
+    background-color: var(--clr-orange-400);
+    border-color: var(--clr-orange-400);
+}
+
+/* Medium Strength Indicator */
+#strength-visual.medium > #rect-1,
+#strength-visual.medium > #rect-2,
+#strength-visual.medium > #rect-3{
+    background-color: var(--clr-yellow-300);
+    border-color: var(--clr-yellow-300);
+}
+
+/* Strong Strength Indicator */
+#strength-visual.strong > #rect-1,
+#strength-visual.strong > #rect-2,
+#strength-visual.strong > #rect-3,
+#strength-visual.strong > #rect-4{
+    background-color: var(--clr-green-200);
+    border-color: var(--clr-green-200);
+}
+
+/* Generate Button Styles */
+#pass-form button{
+    padding: var(--spacing-200) var(--spacing-1300);
+    margin-top: -1rem;
+    border-radius: 0;
+    border: .125em solid transparent; /* Borde transparente inicial */
+    background-color: var(--clr-green-200);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.25rem;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+    box-sizing: border-box;
+}
+#pass-form button:hover{
+    background-color: transparent;
+    color: var(--clr-green-200);
+    border: .125em var(--clr-green-200) solid;
+    cursor: pointer;
+}
+#pass-form button:hover svg{
+    fill: var(--clr-green-200);
 }
