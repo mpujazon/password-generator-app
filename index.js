@@ -5,6 +5,7 @@ const lengthNumber = document.getElementById('length-number');
 const lengthRange = document.getElementById('character-length-range');
 const checkboxes = document.querySelectorAll('.checkbox');
 const strengthVisual = document.getElementById('strength-visual');
+const strengthWord = document.getElementById('strength-word');
 const submitButton = document.getElementById('submit-button');
 
 const arrays = {
@@ -44,6 +45,24 @@ const generatePassword = () => {
 
     passwordElement.classList.remove('disabled');
     passwordElement.innerHTML = password;
+    updateStrengthIndicator(password);
+}
+
+const updateStrengthIndicator = (password) => {
+    if (password.length <= 6){
+        strengthVisual.className = 'too-weak';
+        strengthWord.innerHTML = 'to weak!'
+    }else if(password.length <=10){
+        strengthVisual.className = 'weak';
+        strengthWord.innerHTML = 'weak'
+    }else if(password.length <= 14){
+        strengthVisual.className = 'medium';
+        strengthWord.innerHTML = 'medium'
+    }
+    else{
+        strengthVisual.className = 'strong';
+        strengthWord.innerHTML = 'strong'
+    }
 }
 
 copyButton.addEventListener('click', copyPassword);
