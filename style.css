@@ -85,7 +85,7 @@ main h1{
     font-weight: 700;
     line-height: 2rem;
 }
-#password:disabled{
+#password.disabled{
     -webkit-text-fill-color: var(--clr-grey-700);
 }
 .copy-container{
@@ -93,19 +93,19 @@ main h1{
     align-items: center;
     gap: var(--spacing-200);
 }
-.copied-text{
+#copied-text{
     font-size: 1rem;
     font-weight: 700;
     line-height: 1.25rem;
     text-transform: uppercase;
     color: var(--clr-green-200);
 }
-.icon-copy{
+#icon-copy{
     scale: .8;
     color: var(--clr-green-200);
     transition: color .5s ease-in-out;
 }
-.icon-copy:hover{
+#icon-copy:hover{
     color: var(--clr-white);
     cursor: pointer;
 }
@@ -184,14 +184,14 @@ main h1{
 }
 
 /*  Checkbox Styles */
-.checkboxes-group{
+#checkboxes-group{
     display: flex;
     flex-direction: column;
     gap: var(--spacing-200);
     font-weight: 700;
     line-height: 1.25rem;
 }
-.checkboxes-group div{
+#checkboxes-group div{
     display: flex;
     gap: var(--spacing-200);
     align-items: center;
@@ -336,11 +336,11 @@ input[type="checkbox"]:checked::before {
         font-size: 2rem;
         line-height: 2.625rem;
     }
-    .copied-text{
+    #copied-text{
         font-size: 1.125rem;
         line-height: 1.5rem;
     }
-    .icon-copy{
+    #icon-copy{
         scale: 1;
     }
 
@@ -358,11 +358,11 @@ input[type="checkbox"]:checked::before {
     }
 
     /*  Checkbox Styles */
-    .checkboxes-group{
+    #checkboxes-group{
         font-size: 1.125rem;
         line-height: 1.5rem;
     }
-    .checkboxes-group div{
+    #checkboxes-group div{
         gap: var(--spacing-300);
     }
     
