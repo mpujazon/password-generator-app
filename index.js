@@ -80,7 +80,17 @@ const updateStrengthIndicator = (password) => {
     strengthWord.innerHTML = 'strong'
 }
 
+const updateRangeBackground = () => {
+    const value = lengthRange.value;
+    const min = lengthRange.min;
+    const max = lengthRange.max;
+    const percentage = ((value - min) / (max - min) * 100);
+
+    lengthRange.style.background = `linear-gradient(to right, var(--clr-green-200) ${percentage}%, var(--clr-grey-850) ${percentage}%)`;
+}
+
 
 copyButton.addEventListener('click', copyPassword);
 lengthRange.addEventListener('input', updateLengthNumber);
 submitButton.addEventListener('click', generatePassword);
+lengthRange.addEventListener('input', updateRangeBackground);
