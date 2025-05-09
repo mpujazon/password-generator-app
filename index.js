@@ -8,6 +8,7 @@ const strengthVisual = document.getElementById('strength-visual');
 const strengthWord = document.getElementById('strength-word');
 const submitButton = document.getElementById('submit-button');
 
+// Object containing arrays of all possible characters, grouped by category.
 const arrays = {
     uppercaseArray: Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i)), // A-Z
     lowercaseArray: Array.from({ length: 26 }, (_, i) => String.fromCharCode(97 + i)), // a-z
@@ -15,6 +16,7 @@ const arrays = {
     symbolsArray: ['!', '@', '#', '$', '%', '&', '*', '-', '=', '+', '.', '/', '?']
 }
 
+// Allows the user to copy the password.
 const copyPassword = () => {
     if (!passwordElement.classList.contains('disabled')){
         navigator.clipboard.writeText(passwordElement.textContent)
@@ -25,10 +27,12 @@ const copyPassword = () => {
     }
 }
 
+// Keeps the displayed length number updated
 const updateLengthNumber = () => {
     lengthNumber.innerHTML = lengthRange.value;
 }
 
+// Generates the password by selecting random characters from the chosen categories
 const generatePassword = () => {
     let unchecked = true;
     checkboxes.forEach((checkbox) => {
@@ -54,6 +58,7 @@ const generatePassword = () => {
     updateStrengthIndicator(password);
 }
 
+// Updates the strength indicator based on the number of characters and whether they are only numbers
 const updateStrengthIndicator = (password) => {
     if (password.length <= 6){
         strengthVisual.className = 'too-weak';
@@ -80,6 +85,7 @@ const updateStrengthIndicator = (password) => {
     strengthWord.innerHTML = 'strong'
 }
 
+// Keeps the range background updated based on the thumb's position
 const updateRangeBackground = () => {
     const value = lengthRange.value;
     const min = lengthRange.min;
