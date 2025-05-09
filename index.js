@@ -51,19 +51,29 @@ const generatePassword = () => {
 const updateStrengthIndicator = (password) => {
     if (password.length <= 6){
         strengthVisual.className = 'too-weak';
-        strengthWord.innerHTML = 'to weak!'
-    }else if(password.length <=10){
+        strengthWord.innerHTML = 'to weak!';
+        return;
+    }
+    if (!isNaN(password) && password.length < 16){
+        strengthVisual.className = 'weak';
+        strengthWord.innerHTML = 'weak';
+        return;
+    }
+    if(password.length < 10){
         strengthVisual.className = 'weak';
         strengthWord.innerHTML = 'weak'
-    }else if(password.length <= 14){
+        return;
+    }
+    if(password.length <= 14){
         strengthVisual.className = 'medium';
         strengthWord.innerHTML = 'medium'
+        return;
     }
-    else{
-        strengthVisual.className = 'strong';
-        strengthWord.innerHTML = 'strong'
-    }
+
+    strengthVisual.className = 'strong';
+    strengthWord.innerHTML = 'strong'
 }
+
 
 copyButton.addEventListener('click', copyPassword);
 lengthRange.addEventListener('input', updateLengthNumber);
