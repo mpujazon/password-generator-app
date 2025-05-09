@@ -30,6 +30,12 @@ const updateLengthNumber = () => {
 }
 
 const generatePassword = () => {
+    let unchecked = true;
+    checkboxes.forEach((checkbox) => {
+        checkbox.checked?  unchecked = false : "";
+    });
+    if(unchecked) return;
+
     let password = '';
     let customArray = [];
     checkboxes.forEach((checkbox)=>{
