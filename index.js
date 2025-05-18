@@ -62,7 +62,7 @@ const generatePassword = () => {
 const updateStrengthIndicator = (password) => {
     if (password.length <= 6){
         strengthVisual.className = 'too-weak';
-        strengthWord.innerHTML = 'to weak!';
+        strengthWord.innerHTML = 'too weak!';
         return;
     }
     if (!isNaN(password) && password.length < 16){
